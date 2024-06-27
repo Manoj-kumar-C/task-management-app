@@ -1,0 +1,28 @@
+# Node.js specific
+node_modules/
+npm-debug.log
+
+# Backend environment
+
+# Frontend build
+build/
+dist/
+.cache/
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# Logs and test coverage output
+*.log
+coverage/
+
+# Mac specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
