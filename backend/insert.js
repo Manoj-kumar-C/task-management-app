@@ -5,12 +5,12 @@ const mysql = require('mysql2');
 
 // Create a connection to the database
 const connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: process.env.PORT || 3306, // Default port 3306 for MySQL
-});
+    host: 'u95.h.filess.io',
+    user: 'manoj_coasttide',
+    password: 'e843734c94da8fffe104124305233ed6b4f3e59a',
+    database: 'manoj_coasttide',
+    port: 3307,
+  });
 
 // Connect to MySQL
 connection.connect((err) => {
@@ -58,4 +58,5 @@ const selectAllData = () => {
 };
 
 // Call the insertData function to start the process
-insertData();
+//insertData();
+selectAllData();
