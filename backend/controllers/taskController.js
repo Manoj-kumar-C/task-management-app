@@ -13,7 +13,7 @@ exports.getTasks = async (req, res) => {
 
 // Get tasks by title (search)
 exports.getTasksByTitle = async (req, res) => {
-  const { title } = req.query;
+  const { title } = req.params;  // Extract title from URL parameter
   try {
     const [results] = await db.query('SELECT * FROM tasks WHERE title LIKE ?', [`%${title}%`]);
     res.status(200).json(results);

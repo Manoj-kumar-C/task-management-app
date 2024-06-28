@@ -1,12 +1,20 @@
-"use client"
+"use client";
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { deleteCookie } from 'cookies-next'; // Ensure you have cookies-next installed
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLogout = () => {
+    deleteCookie('isAuthenticated');
+    router.push('/login');
   };
 
   return (
@@ -27,6 +35,9 @@ const Header = () => {
           <Link href="/search-task">
             Search Task
           </Link>
+          <button onClick={handleLogout} className="text-white hover:text-gray-300">
+            Logout
+          </button>
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="focus:outline-none">
@@ -47,6 +58,9 @@ const Header = () => {
           <Link href="/search-task" className="block px-4 py-2">
             Search Task
           </Link>
+          <button onClick={handleLogout} className="block w-full text-left px-4 py-2 text-white hover:text-gray-300">
+            Logout
+          </button>
         </div>
       )}
     </header>
