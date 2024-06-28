@@ -16,7 +16,7 @@ const SearchTask = () => {
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.get(`http://localhost:3307/tasks?title=${searchTerm}`);
+      const response = await axios.get(`http://localhost:3307/api/tasks/tasks?title=${searchTerm}`);
       setTasks(response.data);
     } catch (error) {
       console.error('Error searching tasks:', error);

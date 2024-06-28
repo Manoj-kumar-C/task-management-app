@@ -1,5 +1,4 @@
-// models/taskModel.js - DB Configs
-const mysql = require('mysql2');
+const mysql = require('mysql2/promise');
 const { dbConfig } = require('../config.js');
 
 // Create a connection pool
@@ -14,4 +13,4 @@ pool.getConnection((err, connection) => {
     connection.release();
 });
 
-module.exports = pool.promise(); // Export the pool for promise-based queries
+module.exports = pool;
